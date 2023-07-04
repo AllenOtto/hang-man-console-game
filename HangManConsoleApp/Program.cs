@@ -55,3 +55,27 @@ static void PrintHangMan(int wrongGuesses)
     }
 }
 
+static int PrintWord(List<char> guessedLetters, string randomWord)
+{
+    int counter = 0;
+    int rightLetters = 0;
+    Console.Write("\r\n");
+
+    foreach(char c in randomWord)
+    {
+        if(guessedLetters.Contains(c))
+        {
+            Console.WriteLine(c + " ");
+            rightLetters++;
+        }
+        else
+        {
+            Console.WriteLine(" ");
+        }
+
+        counter++; 
+    }
+
+    return rightLetters;
+}
+
