@@ -55,6 +55,7 @@ static void PrintHangMan(int wrongGuesses)
     }
 }
 
+// Method that prints out correctly guessed letters to the console
 static int PrintWord(List<char> guessedLetters, string randomWord)
 {
     int counter = 0;
@@ -79,3 +80,13 @@ static int PrintWord(List<char> guessedLetters, string randomWord)
     return rightLetters;
 }
 
+// Method that prints a line under each letter of the secret word
+static void printLines(string randomWord)
+{
+    Console.Write("\r");
+    foreach(char c in randomWord)
+    {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        Console.Write("\u0305");
+    }
+}
